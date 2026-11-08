@@ -21,6 +21,19 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/logo/logo.png
+
+# Regenerate with: python tool/make_logo.py && dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/logo/app_icon.png
+  adaptive_icon_background: "#0B1F4A"
+  adaptive_icon_foreground: assets/logo/app_icon_foreground.png
+  remove_alpha_ios: true
+  min_sdk_android: 21

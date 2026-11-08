@@ -18,7 +18,7 @@ Trip planner for NSW buses, trains, metro and ferries, with live arrivals and li
    - Public Transport – Realtime Vehicle Positions v2
 2. Install Flutter 3.27 or newer, then run:
    ```bash
-   ./setup.sh          # generates the android/ios folders and adds location permissions
+   flutter pub get
    flutter run --dart-define=TFNSW_API_KEY=your_key_here
    ```
 
@@ -38,6 +38,16 @@ lib/
   screens/routes_screen.dart   trip options with countdowns
   screens/journey_screen.dart  live map and stop-by-stop timeline
   widgets/                     countdown, mode chips, NSW mode colours
+assets/logo/                   app logo and launcher icon sources
+tool/make_logo.py              draws the logo PNGs (needs Python + Pillow)
+android/, ios/                 platform projects (location permissions already added)
+```
+
+## Logo
+The logo is drawn by `tool/make_logo.py`. To change it, edit the script and run:
+```bash
+python tool/make_logo.py
+dart run flutter_launcher_icons
 ```
 
 ## Notes

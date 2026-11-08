@@ -36,7 +36,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('NSW Transit')),
+      appBar: AppBar(
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset('assets/logo/logo.png', width: 32, height: 32),
+            ),
+            const SizedBox(width: 10),
+            const Text('NSW Transit'),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _addFavourite(context),
         icon: const Icon(Icons.add_location_alt),
